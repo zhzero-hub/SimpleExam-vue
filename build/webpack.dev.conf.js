@@ -9,6 +9,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
+const fs = require('fs')
+const https = require('https')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -42,6 +44,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
+    },
+    disableHostCheck: true,
+    https: {
+      key: fs.readFileSync(path.join(__dirname , '../cert/4707946_zhzero.top.key')),
+      cert: fs.readFileSync(path.join(__dirname , '../cert/4707946_zhzero.top.pem'))
     }
   },
   plugins: [

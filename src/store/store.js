@@ -144,8 +144,7 @@ export default new Vuex.Store({
             path: '/addTeacher'
           }
           ],
-      },
-        {
+      }, /*{
           index: '6',
           title: '模块管理',
           icon: 'icon-module4mokuai',
@@ -155,7 +154,7 @@ export default new Vuex.Store({
               path:'/module'
             }
             ]
-        }
+        }*/
     ]
   },
   mutations: {

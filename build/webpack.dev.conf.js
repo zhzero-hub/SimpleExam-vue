@@ -47,8 +47,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     },
     disableHostCheck: true,
     /*https: {
-      key: fs.readFileSync(path.join(__dirname , '../cert/4707946_zhzero.top.key')),
-      cert: fs.readFileSync(path.join(__dirname , '../cert/4707946_zhzero.top.pem'))
+      key:  fs.readFileSync('/etc/nginx/conf.d/cert/4707946_zhzero.top.key')),
+      cert: fs.readFileSync('/etc/nginx/conf.d/cert/4707946_zhzero.top.pem'))
     }*/
   },
   plugins: [

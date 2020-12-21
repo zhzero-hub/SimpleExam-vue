@@ -8,7 +8,7 @@
              style="text-align: center;
                     margin-top: 100px;
                     color: #409EFF;">
-          <i class="iconfont icon-kaoshi"></i>
+          <i class="iconfont icon-kaoshi" style="color: #6777ef;"></i>
         </div>
         <div style="font-size: 30px;
                     font-weight: 500!important;
@@ -105,7 +105,7 @@ export default {
               this.$router.push({path: '/index' }) //跳转到教师用户
               break
             case "2": //学生
-              this.$cookies.set("cname", resData.userId)
+              this.$cookies.set("cname", resData.studentName)
               this.$cookies.set("cid", resData.userId)
               this.$router.push({path: '/student'})
               break

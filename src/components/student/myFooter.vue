@@ -2,11 +2,8 @@
 <template>
   <footer id="footer">
     <ul>
-      <li><a href="javascript:;">关于我们</a></li>
-      <li><a href="javascript:;">免责声明</a></li>
-      <li><a href="javascript:;">使用协议</a></li>
-      <li><a href="http://beian.miit.gov.cn/" target="_blank">渝ICP备19001371号</a></li>
-      <li>@Copyright 2018-2019. ALL Rights Reserved</li>
+      <li>南京航空航天大学 计算机科学与技术学院/人工智能学院 软件工程课程设计 2020年秋</li>
+      <li>161820217 郑好</li>
     </ul>
   </footer>
 </template>

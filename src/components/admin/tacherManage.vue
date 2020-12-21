@@ -28,7 +28,7 @@
     </el-pagination>
     <!-- 编辑对话框-->
     <el-dialog
-      title="编辑试卷信息"
+      title="编辑教师信息"
       :visible.sync="dialogVisible"
       width="30%"
       :before-close="handleClose">
@@ -87,6 +87,7 @@ export default {
       //分页查询所有试卷信息
       this.$axios(`/api/teachers/${this.pagination.current}/${this.pagination.size}`).then(res => {
         this.pagination = res.data.data;
+        console.log(res.data)
       }).catch(error => {});
     },
     //改变当前记录条数
@@ -105,7 +106,7 @@ export default {
         this.form = res.data.data
       })
     },
-    deleteById(teacherId) { //删除当前学生
+    deleteById(teacherId) { //删除当前教师
       this.$msgbox({
         title: '警告',
         message: '确定删除当前教师吗？删除后无法恢复',
@@ -148,7 +149,7 @@ export default {
         }
       }).then(res => {
         console.log(res)
-        if(res.data.code ==200) {
+        if(res.data.code === 200) {
           this.$message({
             message: '更新成功',
             type: 'success'

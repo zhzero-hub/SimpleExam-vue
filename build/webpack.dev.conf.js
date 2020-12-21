@@ -46,10 +46,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll,
     },
     disableHostCheck: true,
-    https: {
+    /*https: {
       key: fs.readFileSync(path.join(__dirname , '../cert/4707946_zhzero.top.key')),
       cert: fs.readFileSync(path.join(__dirname , '../cert/4707946_zhzero.top.pem'))
-    }
+    }*/
   },
   plugins: [
     new webpack.DefinePlugin({

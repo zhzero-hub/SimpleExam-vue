@@ -84,10 +84,10 @@
             <p class="topic"><span class="number">{{number}}</span>{{showQuestion}}</p>
             <div v-if="currentType == 1">
               <el-radio-group v-model="radio[index]" @change="getChangeLabel" >
-                <el-radio :label="1">{{showAnswer.answerA}}</el-radio>
-                <el-radio :label="2">{{showAnswer.answerB}}</el-radio>
-                <el-radio :label="3">{{showAnswer.answerC}}</el-radio>
-                <el-radio :label="4">{{showAnswer.answerD}}</el-radio>
+                <el-radio :label="1">A: {{showAnswer.answerA}}</el-radio>
+                <el-radio :label="2">B: {{showAnswer.answerB}}</el-radio>
+                <el-radio :label="3">C: {{showAnswer.answerC}}</el-radio>
+                <el-radio :label="4">D: {{showAnswer.answerD}}</el-radio>
               </el-radio-group>
               <div class="analysis" v-if="isPractice">
                 <ul>
@@ -212,6 +212,8 @@ export default {
       let examCode = this.$route.query.examCode //获取路由传递过来的试卷编号
       this.$axios(`/api/exam/${examCode}`).then(res => {  //通过examCode请求试卷详细信息
         this.examData = { ...res.data.data} //获取考试详情
+        this.$cookies.set('paperName' , this.examData.source)
+
         this.index = 0
         this.time = this.examData.totalScore //获取分钟数
         let paperId = this.examData.paperId
@@ -453,7 +455,7 @@ export default {
               answerDate: answerDate, //答题日期
             }
           }).then(res => {
-            if(res.data.code == 200) {
+            if(res.data.code === 200) {
               this.$router.push({path:'/studentScore',query: {
                 score: finalScore,
                 startTime: this.startTime,

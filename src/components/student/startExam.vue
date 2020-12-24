@@ -1,4 +1,3 @@
-// 我的考试页面
 <template>
   <div id="myExam">
     <div class="title">我的练习</div>
@@ -73,7 +72,7 @@ export default {
     this.loading = true
   },
   // watch: {
-    
+
   // },
   methods: {
     //获取当前所有考试信息

@@ -131,7 +131,7 @@ export default {
     deleteRecord(examCode) {
       this.$confirm("确定删除该记录吗,该操作不可逆！！！","删除提示",{
         confirmButtonText: '确定删除',
-        cancelButtonText: '算了,留着',
+        cancelButtonText: '取消',
         type: 'danger'
       }).then(()=> { //确认删除
         this.$axios({

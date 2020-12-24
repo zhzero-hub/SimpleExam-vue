@@ -13,7 +13,7 @@
         <template slot-scope="scope">
           <el-button @click="checkQuestion(scope.row.questionId)" type="primary" size="small">查看详情</el-button>
           <el-button @click="editQuestion(scope.row.questionId)" type="primary" size="small">编辑</el-button>
-          <el-button @click="" type="danger" size="small">删除</el-button>
+          <el-button @click="deleteRecord(scope.row.questionId)" type="danger" size="small">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -183,7 +183,23 @@ export default {
             type: 'success'
           })
         }
-        this.getStudentInfo()
+        this.getAnswerInfo()
+      })
+    },
+    deleteRecord(answerCode) {
+        this.$confirm("确定删除该记录吗,该操作不可逆！！！","删除提示",{
+        confirmButtonText: '确定删除',
+        cancelButtonText: '取消',
+        type: 'danger'
+      }).then(()=> { //确认删除
+        this.$axios({
+          url: `/api/answer/multi/${answerCode}`,
+          method: 'delete',
+        }).then(res => {
+          this.getAnswerInfo()
+        })
+      }).catch(() => {
+
       })
     },
     //改变当前记录条数

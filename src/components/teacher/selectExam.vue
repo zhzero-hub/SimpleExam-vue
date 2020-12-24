@@ -53,7 +53,7 @@
           </el-form-item>
           <el-form-item label="考试日期">
             <el-col :span="11">
-              <el-date-picker type="date" placeholder="选择日期" v-model="form.examDate" style="width: 100%;"></el-date-picker>
+              <el-date-picker type="date" placeholder="选择日期" value-format="yyyy-MM-dd" v-model="form.examDate" style="width: 100%;"></el-date-picker>
             </el-col>
           </el-form-item>
           <el-form-item label="持续时间">
@@ -88,7 +88,8 @@ export default {
         total: null, //记录条数
         size: 4 //每页条数
       },
-      dialogVisible: false
+      dialogVisible: false,
+      date: '',
     }
   },
   created() {
